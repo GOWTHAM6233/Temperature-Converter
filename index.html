@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter and Weather Info</title>
-    <link rel="icon" href="D:\Projects\Temperature Converter\img\istockphoto-1323823418-2048x2048.jpg">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href=".\images\istockphoto-1323823418-2048x2048.jpg">
 
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="weather">
+        <div class="weather" id="weatherSection">
             <h2>Current Weather</h2>
             <p id="weatherInfo">Fetching weather...</p>
         </div>
@@ -49,6 +49,9 @@
                 <h2>Result</h2>
                 <p id="resultValue"></p>
             </div>
+        </div>
+        <div id="locationMessage" class="location-message">
+            <p>Please enable location services on your device to get the current weather information.</p>
         </div>
     </div>
     <script src="script.js"></script>

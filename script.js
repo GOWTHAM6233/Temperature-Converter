@@ -53,13 +53,30 @@ function fetchWeather() {
                     const country = data.sys.country;
                     const weatherInfo = `Location: ${city}, ${country} - Current temperature: ${temp}°C, ${description}`;
                     document.getElementById('weatherInfo').textContent = weatherInfo;
+
+                    // Set background image based on weather description
+                    const weatherSection = document.getElementById('weatherSection');
+                    if (description.includes('clear')) {
+                        weatherSection.classList.add('sunny');
+                    } else if (description.includes('clouds')) {
+                        weatherSection.classList.add('cloudy');
+                    } else if (description.includes('rain')) {
+                        weatherSection.classList.add('rainy');
+                    }
+
+                    // Hide location message if weather data is fetched successfully
+                    document.getElementById('locationMessage').style.display = 'none';
                 })
                 .catch(error => {
                     document.getElementById('weatherInfo').textContent = 'Unable to fetch weather data';
                 });
+        }, error => {
+            // Display error message if location access is denied
+            document.getElementById('locationMessage').style.display = 'block';
         });
     } else {
         document.getElementById('weatherInfo').textContent = 'Geolocation is not supported by this browser.';
+        document.getElementById('locationMessage').style.display = 'block';
     }
 }
 

@@ -31,15 +31,30 @@ h1 {
     background-color: #e0f7fa;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Ensure text is readable on background images */
+    background-size: cover;
+    background-position: center;
+}
+
+.weather.sunny {
+    background-image: url('images/sunny.jpg');
+}
+
+.weather.cloudy {
+    background-image: url('images/cloudy.jpg');
+}
+
+.weather.rainy {
+    background-image: url('images/rainy.jpg');
 }
 
 .weather h2 {
-    color: #00796b;
+    color: #fff;
 }
 
 .weather p {
     font-size: 20px;
-    color: #00796b;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -103,4 +118,11 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     color: #00796b;
+}
+
+.location-message {
+    margin-top: 20px;
+    color: #d32f2f;
+    font-size: 18px;
+    display: none;
 }
